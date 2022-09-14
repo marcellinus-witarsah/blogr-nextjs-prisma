@@ -13,6 +13,9 @@ generator client {
 //define database structure
 //Create table name Post with primary key `id`
 //and the test of the columns
+// schema.prisma
+
+
 model Post {
   id        String  @id @default(cuid())
   title     String
@@ -21,8 +24,6 @@ model Post {
   author    User?   @relation(fields: [authorId], references: [id])
   authorId  String?
 }
-
-//Create table name Account with primary key `id`
 
 model Account {
   id                 String  @id @default(cuid())
@@ -72,3 +73,4 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
